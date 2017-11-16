@@ -17,7 +17,7 @@ public class StudentMapperTest {
     @Test
     public void selectByExample() throws Exception {
         StudentCriteria studentCriteria = new StudentCriteria();
-        System.out.println(studentMapper.selectByExample(studentCriteria));
+        System.out.println(studentMapper.selectByExample(studentCriteria).get(0).getName());
     }
 
 }
