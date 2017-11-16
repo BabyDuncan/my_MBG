@@ -51,6 +51,7 @@
             <columnOverride column="gender" jdbcType="BIT" javaType="com.babyduncan.Gender"
                             typeHandler="com.babyduncan.typeHandler.GenderHandler"></columnOverride>
             <ignoreColumn column="bookNum"></ignoreColumn>
+
         </table>
 
     </context>
