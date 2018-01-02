@@ -12,4 +12,6 @@ public interface StudentService {
 
     List<Student> listSomeStudent();
 
+    List<Student> getByPage(int pageSize, int pageNum);
+
 }

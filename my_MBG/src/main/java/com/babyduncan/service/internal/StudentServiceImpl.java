@@ -4,6 +4,7 @@ import com.babyduncan.dao.StudentMapper;
 import com.babyduncan.model.Student;
 import com.babyduncan.model.StudentCriteria;
 import com.babyduncan.service.StudentService;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,5 +28,12 @@ public class StudentServiceImpl implements StudentService {
         studentCriteria.or().andNameLike("%guohaozhao1%").andAgeGreaterThan(10);
         studentCriteria.or().andGradeEqualTo(7);
         return studentMapper.selectByExample(studentCriteria);
+    }
+
+    @Override
+    public List<Student> getByPage(int pageSize, int pageNum) {
+        StudentCriteria studentCriteria = new StudentCriteria();
+        RowBounds rowBounds = new RowBounds((pageNum - 1) * pageSize, pageSize);
+        return studentMapper.selectByExampleWithRowbounds(studentCriteria, rowBounds);
     }
 }

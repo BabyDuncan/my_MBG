@@ -47,4 +47,12 @@ public class StudentServiceImplTest {
     public void testSelectList() {
         System.out.println(studentService.listSomeStudent());
     }
+
+    @Test
+    public void testSelectByPage() {
+        int pageSize = 3;
+
+        System.out.println(studentService.getByPage(pageSize, 1));
+        System.out.println(studentService.getByPage(pageSize, 3));
+    }
 }
