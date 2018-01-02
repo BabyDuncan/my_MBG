@@ -7,7 +7,7 @@
     <classPathEntry
             location="/Users/guohaozhao/.m2/repository/mysql/mysql-connector-java/8.0.8-dmr/mysql-connector-java-8.0.8-dmr.jar"/>
 
-    <context id="guohaozhaoTest" targetRuntime="MyBatis3">
+    <context id="guohaozhaoTest" targetRuntime="MyBatis3" defaultModelType="flat">
 
         <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
             <property name="searchString" value="[e|E]xample$"/>
