@@ -50,7 +50,6 @@
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
             <columnOverride column="gender" jdbcType="BIT" javaType="com.babyduncan.Gender"
                             typeHandler="com.babyduncan.typeHandler.GenderHandler"></columnOverride>
-
         </table>
 
     </context>
