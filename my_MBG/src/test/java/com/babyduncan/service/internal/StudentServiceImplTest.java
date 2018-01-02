@@ -11,6 +11,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.Random;
 
+/**
+ * http://www.mybatis.org/generator/generatedobjects/exampleClassUsage.html
+ * http://www.mybatis.org/generator/reference/plugins.html
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
 public class StudentServiceImplTest {
