@@ -105,7 +105,7 @@
                     <tableNames>student</tableNames>
                     <verbose>true</verbose>
                     <overwrite>true</overwrite>
-                    <!--<skip>true</skip>-->
+                    <skip>true</skip>
                 </configuration>
                 <executions>
                     <execution>
