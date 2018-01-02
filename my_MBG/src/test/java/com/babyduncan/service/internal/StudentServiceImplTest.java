@@ -14,6 +14,7 @@ import java.util.Random;
 /**
  * http://www.mybatis.org/generator/generatedobjects/exampleClassUsage.html
  * http://www.mybatis.org/generator/reference/plugins.html
+ * org.mybatis.generator.plugins.RowBoundsPlugin
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
@@ -32,10 +33,12 @@ public class StudentServiceImplTest {
 
     @Test
     public void insertManyStudent() {
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             Student student = new Student();
             student.setName("guohaozhao" + new Random().nextInt(100));
             student.setGender(Gender.MALE);
+            student.setAge((short) new Random().nextInt(30));
+            student.setGrade(new Random().nextInt(13));
             System.out.println(studentService.insertStudent(student));
         }
     }
