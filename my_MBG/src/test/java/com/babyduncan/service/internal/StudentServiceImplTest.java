@@ -37,9 +37,14 @@ public class StudentServiceImplTest {
             Student student = new Student();
             student.setName("guohaozhao" + new Random().nextInt(100));
             student.setGender(Gender.MALE);
-            student.setAge((short) new Random().nextInt(30));
+            student.setAge(new Random().nextInt(30));
             student.setGrade(new Random().nextInt(13));
             System.out.println(studentService.insertStudent(student));
         }
+    }
+
+    @Test
+    public void testSelectList() {
+        System.out.println(studentService.listSomeStudent());
     }
 }
