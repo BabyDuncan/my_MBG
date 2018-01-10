@@ -32,4 +32,12 @@ public class StudentMapperTest {
         System.out.println(studentMapper.insertSelective(student));
     }
 
+    @Test
+    public void testDistinct() {
+        StudentCriteria studentCriteria = new StudentCriteria();
+        studentCriteria.createCriteria().andAgeBetween(1, 20);
+        long count = studentMapper.countDistinctAgeByExample(studentCriteria);
+        System.out.println("COUNT IS " + count);
+    }
+
 }

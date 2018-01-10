@@ -8,7 +8,7 @@
             location="/Users/zhaoguohao/.m2/repository/mysql/mysql-connector-java/8.0.8-dmr/mysql-connector-java-8.0.8-dmr.jar"/>
 
     <context id="guohaozhaoTest" targetRuntime="MyBatis3" defaultModelType="flat">
-
+        <property name="mergeable" value="false"></property>
         <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
             <property name="searchString" value="[e|E]xample$"/>
             <property name="replaceString" value="Criteria"/>
@@ -18,7 +18,7 @@
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin>
         <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"></plugin>
         <plugin type="org.mybatis.generator.plugins.CachePlugin">
-            <property name="cache_readOnly" value="true"/>
+            <property name="cache_readOnly" value="false"/>
         </plugin>
 
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
@@ -32,7 +32,6 @@
         </javaTypeResolver>
 
         <javaModelGenerator targetPackage="com.babyduncan.model" targetProject="src/main/java">
-            <!--<property name="constructorBased" value="true"></property>-->
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
@@ -49,14 +48,13 @@
 
         <table tableName="student">
             <property name="useActualColumnNames" value="false"/>
-            <!--<property name="constructorBased" value="true"></property>-->
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
             <columnOverride column="gender" jdbcType="BIT" javaType="com.babyduncan.Gender"
                             typeHandler="com.babyduncan.typeHandler.GenderHandler"></columnOverride>
             <columnOverride column="grade" javaType="Integer"></columnOverride>
             <columnOverride column="create_time" isGeneratedAlways="true"></columnOverride>
             <columnOverride column="age" javaType="Integer"></columnOverride>
-            <columnOverride column="avatarBin" javaType="String"></columnOverride>
+            <columnOverride column="avatar_bin" javaType="String"></columnOverride>
             <columnOverride column="desc" javaType="String"></columnOverride>
         </table>
 

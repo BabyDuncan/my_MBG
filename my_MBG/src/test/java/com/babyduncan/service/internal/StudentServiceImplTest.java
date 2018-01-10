@@ -2,10 +2,12 @@ package com.babyduncan.service.internal;
 
 import com.babyduncan.Gender;
 import com.babyduncan.model.Student;
+import com.babyduncan.model.StudentCriteria;
 import com.babyduncan.service.StudentService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -33,10 +35,10 @@ public class StudentServiceImplTest {
 
     @Test
     public void insertManyStudent() {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             Student student = new Student();
             student.setName("guohaozhao" + new Random().nextInt(100));
-            student.setGender(Gender.MALE);
+            student.setGender(Gender.FEMALE);
             student.setAge(new Random().nextInt(30));
             student.setGrade(new Random().nextInt(13));
             System.out.println(studentService.insertStudent(student));
@@ -54,5 +56,12 @@ public class StudentServiceImplTest {
 
         System.out.println(studentService.getByPage(pageSize, 1));
         System.out.println(studentService.getByPage(pageSize, 3));
+    }
+
+    @Test
+    public void testDistinct() {
+        StudentCriteria studentCriteria = new StudentCriteria();
+        studentCriteria.createCriteria().andAgeBetween(1, 20);
+
     }
 }
